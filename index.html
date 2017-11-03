@@ -1,0 +1,27 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <h1>Click around the square</h1>
+        <div id="app" v-cloak>
+            <canvas-component ref="canvas"></canvas-component>
+            <div class="buttons">
+                <button v-if="canUndo" @click="undoDraw">Undo</button>
+                <button v-else disabled>Undo</button>
+                <button v-if="canRedo" @click="redoDraw">Redo</button>
+                <button v-else disabled>Redo</button>
+            </div>
+        </div>
+        <script src="node_modules/vue/dist/vue.js"></script>
+        <script src="node_modules/vuex/dist/vuex.js"></script>
+        <script src="node_modules/vuex-undo-redo/dist/vuex-undo-redo.min.js"></script>
+        <script src="app.js" type="module"></script>
+    </body>
+</html>
