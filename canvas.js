@@ -38,7 +38,6 @@ export default {
     clicked(event) {
       this.$store.commit('addCoords', this.getMousePos(event));
       this.draw();
-      this.undone = [];
     },
     draw() {
       canvas.width = 400;
